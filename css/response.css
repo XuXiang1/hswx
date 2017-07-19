@@ -1,0 +1,57 @@
+@media screen and (max-width: 1024px) {
+    .home-logo {
+        top: 25px;
+        left: 55px;
+    }
+    .login-btn-shouying {
+        margin-top: 40px;
+    }
+    .login-btn-guanliyuan {
+        margin-top: 40px;
+    }
+    .login-content {
+        width: 680px;
+        left: calc(50% - 340px);
+    }
+    .login-btn-shouying {
+        margin-top: 40px;
+    }
+    .login-btn-guanliyuan {
+        margin-top: 40px;
+    }
+    #goods_single_edit .goods_edit_top {
+        width: 100%;
+        height: 105px;
+        float: left;
+    }
+    #goods_single_edit .goods_edit_left {
+        height: calc(100% - 105px);
+    }
+    #goods_single_edit .goods-edit-img {
+        width: 100px;
+        height: 95px;
+    }
+    #goods_single_edit .goods-edit-detail {
+        height: 95px;
+    }
+    .edit-calculater-top-block {
+        height: calc(100% - 335px);
+    }
+    .form-datetime-lang {
+        width: 116px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .home-logo {
+        top: 25px;
+        left: 55px;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .home-logo {
+        top: 30px;
+        left: 100px;
+    }
+}

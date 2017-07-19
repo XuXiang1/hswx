@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Home
+        </title>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport">
+            <link href="./css/app.min.css" rel="stylesheet">
+                <link href="./css/home.css" rel="stylesheet">
+                    <link href="./css/response.css" rel="stylesheet">
+                        <style>
+                            /* TODO */
+                        </style>
+                    </link>
+                </link>
+            </link>
+            <link rel="stylesheet" type="text/css" href="./css/amazeui.datetimepicker.css">
+            <link rel="stylesheet" type="text/css" href="./css/font-awesome.css">
+        </meta>
+    </head>
+    <body>
+        <!-- 主页 -->
+        <div class="app-page" data-page="home">
+            <div class="app-content home-page">
+                <div class="home-logo">
+                </div>
+                <div class="home-content">
+                    <div class="home-link home-link-shouying">
+                    </div>
+                    <div class="home-link home-link-xiaoshou">
+                    </div>
+                    <div class="home-link home-link-duizhang">
+                    </div>
+                    <div class="home-link home-link-pandian">
+                    </div>
+                    <div class="home-link home-link-tuihuo">
+                    </div>
+                    <div class="home-link home-link-shouhuo">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 收银 -->
+        <div class="app-page" data-page="shouyin">
+            <div class="app-content">
+                <div class="page-top-bar">
+                    <div class="top-bar-logo">
+                    </div>
+                    <div class="top-bar-btn top-bar-btn-menu">
+                    </div>
+                    <div class="top-bar-user-name">
+                        <span id="top_bar_user_name">
+                        </span>
+                        <i class="top-bar-btn-arrow">
+                        </i>
+                    </div>
+                    <div class="top-bar-btn top-bar-btn-user-head">
+                    </div>
+                    <div class="top-bar-btn top-bar-btn-wifi">
+                    </div>
+                    <div class="top-bar-btn top-bar-btn-print">
+                    </div>
+                    <div class="top-bar-btn top-bar-btn-home">
+                    </div>
+                </div>
+                <div class="page-main">
+                    <div class="page-main-left">
+                        <div class="search-block">
+                            <div class="search-block-scan">
+                            </div>
+                            <div class="search-block-input">
+                                <input name="" placeholder="条码/无码商品" type="text">
+                                    <i>
+                                    </i>
+                                </input>
+                            </div>
+                        </div>
+                        <div class="sell-number">
+                            <span id="main-sell-number">
+                                销售单：88801-13173884748999
+                            </span>
+                        </div>
+                        <div class="select-user">
+                            <div class="btn-select-member">
+                                选择会员
+                            </div>
+                            <div class="btn-select-seller">
+                                选择营业员
+                            </div>
+                        </div>
+                        <div class="selected-goods">
+                            <div class="good-list-top">
+                            </div>
+                            <div class="good-list">
+                                <!-- 商品列表 -->
+                                <ul class="good-list-ul" id="goodslist">
+                                   <li>
+                                        <div class="item-num">1</div>
+                                        <div class="item-detail" itemcount="1" itemname="五粮液" itempricenow="800" itempriceorigin="850" onclick="show_edit_good(this)">
+                                            <p>五粮液</p>
+                                            <p>12312312231</p>
+                                            <p>
+                                                <span class="item-price-origin">800</span>
+                                                <span class="item-price-now">700</span>
+                                            </p>
+                                        </div>
+                                        <div class="item-option">
+                                            <i class="btn-decrease"></i>
+                                            <span class="item-count">1</span>
+                                            <i class="btn-add"></i>
+                                            <span class="item-price-all">¥800</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="good-list-bottom">
+                                <div class="good-list-bottom-border">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goods-option">
+                            <div class="calcle-all-selected">
+                                <div class="option-btn">
+                                    <i>
+                                    </i>
+                                    <span class="option-name">
+                                        整单取消
+                                    </span>
+                                </div>
+                                <span class="count-red-pop">
+                                    123
+                                </span>
+                            </div>
+                            <div class="hand-ticket-selected">
+                                <div class="option-btn">
+                                    <i>
+                                    </i>
+                                    <span class="option-name">
+                                        挂单
+                                    </span>
+                                </div>
+                                <span class="count-red-pop">
+                                    123
+                                </span>
+                            </div>
+                            <!--                             <div class="count-ticket-selected">
+                                <div class="option-btn">
+                                    <i>
+                                    </i>
+                                    <span class="option-name">
+                                        结账
+                                    </span>
+                                </div>
+                                <span class="count-red-pop">
+                                    123
+                                </span>
+                            </div> -->
+                        </div>
+                        <div class="goods-confirm-btn"  onclick="show_goods_confirm_block()">
+                            <div class="btn-name">
+                                收款
+                            </div>
+                            <div class="count-all">
+                                ¥99999
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 商品列表 -->
+                    <div class="page-main-right" id="goods_list_right">
+                        <div class="page-main-right-top-class" id="wrapper">
+                            <div id="scroller">
+                                <ul>
+                                    <li>
+                                        全部
+                                    </li>
+                                    <li>
+                                        烟酒
+                                    </li>
+                                    <li>
+                                        饮料
+                                    </li>
+                                    <li>
+                                        便利食品
+                                    </li>
+                                    <li>
+                                        生活日用品
+                                    </li>
+                                    <li>
+                                        个人护理品
+                                    </li>
+                                    <li>
+                                        服装
+                                    </li>
+                                    <li>
+                                        皮具
+                                    </li>
+                                    <li>
+                                        鞋城
+                                    </li>
+                                    <li>
+                                        房产
+                                    </li>
+                                    <li>
+                                        装修
+                                    </li>
+                                    <li>
+                                        建材
+                                    </li>
+                                    <li>
+                                        笔记本
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="page-main-right-good-list">
+                            <div class="page-main-right-good-item">
+                                <div class="page-main-right-good-item-detail">
+                                    <p class="page-main-right-good-title">
+                                        五粮液
+                                    </p>
+                                    <p>
+                                        <span class="page-main-right-good-num">
+                                            92384792347
+                                        </span>
+                                        <span class="page-main-right-good-price">
+                                            ¥800
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="page-main-right-good-item">
+                                <div class="page-main-right-good-item-detail">
+                                    <p class="page-main-right-good-title">
+                                        五粮液
+                                    </p>
+                                    <p>
+                                        <span class="page-main-right-good-num">
+                                            92384792347
+                                        </span>
+                                        <span class="page-main-right-good-price">
+                                            ¥800
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="page-main-right-good-item">
+                                <div class="page-main-right-good-item-detail">
+                                    <p class="page-main-right-good-title">
+                                        五粮液
+                                    </p>
+                                    <p>
+                                        <span class="page-main-right-good-num">
+                                            92384792347
+                                        </span>
+                                        <span class="page-main-right-good-price">
+                                            ¥800
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="page-main-right-good-item">
+                                <div class="page-main-right-good-item-detail">
+                                    <p class="page-main-right-good-title">
+                                        五粮液
+                                    </p>
+                                    <p>
+                                        <span class="page-main-right-good-num">
+                                            92384792347
+                                        </span>
+                                        <span class="page-main-right-good-price">
+                                            ¥800
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="page-main-right-good-item">
+                                <div class="page-main-right-good-item-detail">
+                                    <p class="page-main-right-good-title">
+                                        五粮液
+                                    </p>
+                                    <p>
+                                        <span class="page-main-right-good-num">
+                                            92384792347
+                                        </span>
+                                        <span class="page-main-right-good-price">
+                                            ¥800
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="page-main-right-good-item">
+                                <div class="page-main-right-good-item-detail">
+                                    <p class="page-main-right-good-title">
+                                        五粮液
+                                    </p>
+                                    <p>
+                                        <span class="page-main-right-good-num">
+                                            92384792347
+                                        </span>
+                                        <span class="page-main-right-good-price">
+                                            ¥800
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 单品编辑 -->
+                    <div class="page-main-right" id="goods_single_edit">
+                        <div class="goods_edit_top">
+                            <div class="goods-edit-img">
+                            </div>
+                            <div class="goods-edit-detail">
+                                <p class="goods-edit-name">
+                                    五粮液
+                                </p>
+                                <p class="goods-edit-price">
+                                    单价：
+                                    <span class="price-text">
+                                        800.0
+                                    </span>
+                                </p>
+                                <p class="goods-edit-price-member">
+                                    会员价：
+                                    <span class="price-text">
+                                        780.0
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="goods_edit_left">
+                            <div class="goods-edit-input">
+                                <div class="goods-edit-input-item">
+                                    <div class="goods-edit-input-item-name">
+                                        折扣
+                                    </div>
+                                    <div class="goods-edit-input-item-value current">
+                                        100%
+                                    </div>
+                                </div>
+                                <div class="goods-edit-input-item">
+                                    <div class="goods-edit-input-item-name">
+                                        现价
+                                    </div>
+                                    <div class="goods-edit-input-item-value">
+                                        800.0
+                                    </div>
+                                </div>
+                                <div class="goods-edit-count-item">
+                                    <div class="goods-edit-input-item-name">
+                                        数量
+                                    </div>
+                                    <i class="btn-decrease">
+                                    </i>
+                                    <div class="goods-edit-count-item-value">
+                                        1
+                                    </div>
+                                    <i class="btn-add">
+                                    </i>
+                                </div>
+                                <div class="goods-edit-input-item">
+                                    <div class="goods-edit-input-item-name">
+                                        金额
+                                    </div>
+                                    <div class="goods-edit-input-item-value">
+                                        800.0
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="goods-edit-btns">
+                                <div class="goods-edit-btns-block btns-green">
+                                    赠送
+                                </div>
+                                <div class="goods-edit-btns-block btns-red">
+                                    删除
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goods_edit_right">
+                            <div class="edit-calculater-block one-good-edit">
+                                <div class="edit-calculater-item" onclick="calculaterClick(this,7)">
+                                    7
+                                </div>
+                                <div class="edit-calculater-item" onclick="calculaterClick(this,8)">
+                                    8
+                                </div>
+                                <div class="edit-calculater-item" onclick="calculaterClick(this,9)">
+                                    9
+                                </div>
+                                <div class="edit-calculater-item" onclick="calculaterClick(this,4)">
+                                    4
+                                </div>
+                                <div class="edit-calculater-item" onclick="calculaterClick(this,5)">
+                                    5
+                                </div>
+                                <div class="edit-calculater-item" onclick="calculaterClick(this,6)">
+                                    6
+                                </div>
+                                <div class="edit-calculater-item" onclick="calculaterClick(this,1)">
+                                    1
+                                </div>
+                                <div class="edit-calculater-item" onclick="calculaterClick(this,2)">
+                                    2
+                                </div>
+                                <div class="edit-calculater-item" onclick="calculaterClick(this,3)">
+                                    3
+                                </div>
+                                <div class="edit-calculater-item" onclick="calculaterClick(this,0)">
+                                    0
+                                </div>
+                                <div class="edit-calculater-item" onclick="calculaterClick(this,'.')">
+                                    .
+                                </div>
+                                <div class="edit-calculater-item" onclick="calculaterClick(this,'del')">
+                                    ←
+                                </div>
+                            </div>
+                            <div class="edit-calculater-top-block">
+                            </div>
+                            <div class="goods-edit-btns">
+                                <div class="goods-edit-btns-block-right-blue">
+                                    赠送
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 销售查询 -->
+        <div class="app-page" data-page="xiaoshou">
+          <div class="app-topbar blue">
+            <div class="left app-button" data-back="true"></div>
+            <div class="app-title">销售单查询</div>
+          </div>
+          <div class="app-content bg-white">
+            <div class="xiaoshou-block-left">
+              <div class="xiaoshou-search-box">
+                <i></i>
+                <input type="text" name="" placeholder="条码/无码商品">
+              </div>
+              <div class="xiaoshou-search-btn">搜索</div>
+              <!-- 搜索结果列表 -->
+              <div class="xiaoshou-search-results">
+                  <div class="xiaoshou-results-item current">
+                      <div class="xiaoshou-results-item-index">1</div>
+                      <div class="xiaoshou-results-item-content">
+                        <span class="xiaoshou-results-item-num">889977379898980878001</span><br />
+                        <span class="xiaoshou-results-item-time">时间：2017-01-30 21:35:10</span>
+                      </div>
+                      <div class="xiaoshou-results-item-tuihuo">
+                          <i></i>
+                      </div>
+                  </div>
+                  <div class="xiaoshou-results-item current">
+                      <div class="xiaoshou-results-item-index">1</div>
+                      <div class="xiaoshou-results-item-content">
+                        <span class="xiaoshou-results-item-num">889977379898980878001</span><br />
+                        <span class="xiaoshou-results-item-time">时间：2017-01-30 21:35:10</span>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="xiaoshou-block-right">
+                <div class="xiaoshou-sales-info">
+                  <span class="xiaoshou-sales-info-num">889977379898980878001</span>
+                  <span class="xiaoshou-sales-info-time">时间：2017-01-30 21:35:10</span>
+                </div>
+                <div class="xiaoshou-sales-goods-list">
+                  <table cellpadding="0" cellspacing="0">
+                      <tr>
+                        <th>商品</th>
+                        <th>数量</th>
+                        <th>价格</th>
+                        <th>折扣</th>
+                        <th>金额</th>
+                        <th style="width: 120px;">退货</th>
+                        <th>已退</th>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>茅台飞天53度</span><br />
+                          <span>6100000000002</span>
+                        </td>
+                        <td>
+                          1.0
+                        </td>
+                        <td>
+                          800.0
+                        </td>
+                        <td>
+                          100
+                        </td>
+                        <td>
+                          800.0
+                        </td>
+                        <td>
+                            <i class="btn-decrease"></i>
+                            <span class="item-count">1</span>
+                            <i class="btn-add"></i>
+                        </td>
+                        <td>
+                          0.0
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span>茅台飞天53度</span><br />
+                          <span>6100000000002</span>
+                        </td>
+                        <td>
+                          1.0
+                        </td>
+                        <td>
+                          800.0
+                        </td>
+                        <td>
+                          100
+                        </td>
+                        <td>
+                          800.0
+                        </td>
+                        <td>
+                            <i class="btn-decrease"></i>
+                            <span class="item-count">1</span>
+                            <i class="btn-add"></i>
+                        </td>
+                        <td>
+                          0.0
+                        </td>
+                      </tr>
+                  </table>
+                </div>
+                <div class="xiaoshou-sales-total-money">
+                    <p>
+                      收银员：
+                      <span class="sales-man">1001</span>
+                      <span class="sales-date">2017-01-30  21:35:10</span>    
+                    </p>
+                    <p>
+                      总金额：
+                      <span class="sales-total-money">1800.0 </span>   
+                      总数量：
+                      <span class="sales-total-count">2</span>   
+                      次卡支付：
+                      <span class="cika-money">1800.0元</span>
+                    </p>
+                </div>
+                <div class="xiaoshou-sales-opration-block">
+                  <div class="xiaoshou-sales-opration-btn-print">打印</div>
+                  <div class="xiaoshou-sales-opration-btn-tuihuo">退货</div>
+                  <div class="xiaoshou-sales-opration-btn-quantui">全退</div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 日结对账 -->
+        <div class="app-page" data-page="duizhang">
+          <div class="app-topbar blue">
+            <div class="left app-button" data-back="true"></div>
+            <div class="app-title">收银对账</div>
+          </div>
+          <div class="app-content">
+            <div class="duizhang-search-block">
+                
+                <div class="duizhang-search-start-time">
+                    <span>开始时间</span><input size="22" type="text" value="" readonly class="form-datetime-lang am-form-field">
+                </div>
+                <div class="duizhang-search-end-time">
+                    <span>至</span><input size="22" type="text" value="" readonly class="form-datetime-lang am-form-field">
+                </div>
+                <div class="duizhang-btn-print">打印</div>
+                <div class="duizhang-btn-search">搜索</div>
+                
+            </div>
+            <div class="duizhang-count-all">
+                <span class="duizhang-text-left">收银员</span>
+                <span class="duizhang-text-right">101 管理员</span>
+                <span class="duizhang-text-left">交易数</span>
+                <span class="duizhang-text-right">1</span>
+                <span class="duizhang-text-left">交易额</span>
+                <span class="duizhang-text-right">4100.0</span>
+                <span class="duizhang-text-left">退换货</span>
+                <span class="duizhang-text-right">1</span>
+                <span class="duizhang-text-left">充值</span>
+                <span class="duizhang-text-right">-</span>
+                <span class="duizhang-text-left total">合计</span>
+                <span class="duizhang-text-right total">4100.0</span>
+
+            </div>
+            <div class="duizhang-count-tips">
+                提示：断网状态下无法查询充值数据
+            </div>
+            <div class="duizhang-count-pay">
+                <span class="duizhang-text-left top-th">支付方式</span>
+                <span class="duizhang-text-middle top-th">单数</span>
+                <span class="duizhang-text-right top-th">金额</span>
+
+                <span class="duizhang-text-left">现金</span>
+                <span class="duizhang-text-middle">1</span>
+                <span class="duizhang-text-right">4200.0</span>
+
+                <span class="duizhang-text-left">支付宝</span>
+                <span class="duizhang-text-middle">1</span>
+                <span class="duizhang-text-right">4200.0</span> 
+
+                <span class="duizhang-text-left">微信</span>
+                <span class="duizhang-text-middle">1</span>
+                <span class="duizhang-text-right">0.0</span>  
+
+                <span class="duizhang-text-left">其他</span>
+                <span class="duizhang-text-middle">1</span>
+                <span class="duizhang-text-right">0.0</span>
+
+                <span class="duizhang-text-left total">合计</span>
+                <span class="duizhang-text-middle total"></span>
+                <span class="duizhang-text-right total">8400.0</span>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="mask">
+        </div>
+        <!-- 整单折扣弹框 -->
+        <div class="total-ticket-discount-block">
+            <div class="total-ticket-discount-block-btns">
+                <div class="discount-block-btn-blue">比率折</div>
+                <div class="discount-block-btn-green">金额折</div>
+            </div>
+            <div class="total-ticket-discount-block-inputs">
+                <input type="text" name="" placeholder="折扣比率(1~99)">
+                <i></i>
+            </div>
+            <div class="total-ticket-discount-block-jianpan">
+                <div class="edit-calculater-item" onclick="calculaterClick(this,7)">
+                    7
+                </div>
+                <div class="edit-calculater-item" onclick="calculaterClick(this,8)">
+                    8
+                </div>
+                <div class="edit-calculater-item" onclick="calculaterClick(this,9)">
+                    9
+                </div>
+                <div class="edit-calculater-item" onclick="calculaterClick(this,4)">
+                    4
+                </div>
+                <div class="edit-calculater-item" onclick="calculaterClick(this,5)">
+                    5
+                </div>
+                <div class="edit-calculater-item" onclick="calculaterClick(this,6)">
+                    6
+                </div>
+                <div class="edit-calculater-item" onclick="calculaterClick(this,1)">
+                    1
+                </div>
+                <div class="edit-calculater-item" onclick="calculaterClick(this,2)">
+                    2
+                </div>
+                <div class="edit-calculater-item" onclick="calculaterClick(this,3)">
+                    3
+                </div>
+                <div class="edit-calculater-item" onclick="calculaterClick(this,0)">
+                    0
+                </div>
+                <div class="edit-calculater-item" onclick="calculaterClick(this,'.')">
+                    .
+                </div>
+                <div class="edit-calculater-item" onclick="calculaterClick(this,'00')">
+                    确定
+                </div>
+            </div>
+        </div>
+        <!-- 收款键盘弹框 -->
+        <div class="goods-confirm-block">
+            <div class="goods-confirm-block-left">
+                <div class="goods-confirm-blcok-title">
+                    <p>应收:&nbsp;&yen;1800</p>
+                    <p>已收:&nbsp;&yen;0</p>
+                    <p>待付:<span class="font-red">&nbsp;&yen;1800</span></p>
+                    <p>找零:<span class="font-green">&nbsp;&yen;0</span></p>
+                </div>
+                <div class="goods-confirm-block-inputs">
+                    <p>现金</p>
+                    <div class="goods-confirm-block-input">
+                        <input type="text" name="" value="0" />
+                    </div>
+                </div>
+                <div class="goods-confirm-block-btns">
+                    <div class="goods-confirm-block-btn" onclick="hide_goods_confirm_block()"><p>取消</p></div>
+                    <div class="goods-confirm-block-btn"><p>会员</p></div>
+                    <div class="goods-confirm-block-btn-two" onclick="show_total_ticket_discount()"><p>整单<br />折扣</p></div>
+                </div>
+            </div>
+            <div class="goods-confirm-block-right">
+                <div class="goods-confirm-block-payment-method">
+                    <div class="payment-method payment-method-zhifubao"><p><i></i>支付宝</p></div>
+                    <div class="payment-method payment-method-weixin"><p><i></i>微信支付</p></div>
+                    <div class="payment-method payment-method-more"><p><i></i>更多支付</p></div>
+                </div>
+                <div class="goods-confirm-block-payment-rmb">
+                    <div class="payment-rmb payment-rmb-20"><i></i></div>
+                    <div class="payment-rmb payment-rmb-50"><i></i></div>
+                    <div class="payment-rmb payment-rmb-100"><i></i></div>
+                </div>
+                <div class="goods-confirm-block-jianpan-block">
+                    <div class="goods-confirm-block-jianpan">
+                        <div class="edit-calculater-item" onclick="calculaterClick(this,7)">
+                            7
+                        </div>
+                        <div class="edit-calculater-item" onclick="calculaterClick(this,8)">
+                            8
+                        </div>
+                        <div class="edit-calculater-item" onclick="calculaterClick(this,9)">
+                            9
+                        </div>
+                        <div class="edit-calculater-item" onclick="calculaterClick(this,4)">
+                            4
+                        </div>
+                        <div class="edit-calculater-item" onclick="calculaterClick(this,5)">
+                            5
+                        </div>
+                        <div class="edit-calculater-item" onclick="calculaterClick(this,6)">
+                            6
+                        </div>
+                        <div class="edit-calculater-item" onclick="calculaterClick(this,1)">
+                            1
+                        </div>
+                        <div class="edit-calculater-item" onclick="calculaterClick(this,2)">
+                            2
+                        </div>
+                        <div class="edit-calculater-item" onclick="calculaterClick(this,3)">
+                            3
+                        </div>
+                        <div class="edit-calculater-item" onclick="calculaterClick(this,0)">
+                            0
+                        </div>
+                        <div class="edit-calculater-item" onclick="calculaterClick(this,'.')">
+                            .
+                        </div>
+                        <div class="edit-calculater-item" onclick="calculaterClick(this,'00')">
+                            ←
+                        </div>
+                    </div>
+                </div>
+                <div class="goods-confirm-block-right-btn">收款</div>
+            </div>
+        </div>
+        <!-- 登陆框 -->
+        <div class="login-block">
+            <div class="login-block-items">
+                <div class="login-block-item-phpne current">
+                    手机/邮箱
+                </div>
+                <div class="login-block-item-account">
+                    账号
+                </div>
+            </div>
+            <div class="login-block-inputs">
+                <div class="input-block" id="user_phone_email">
+                    <i class="login-cellphone">
+                    </i>
+                    <input name="login_cellphone_email" id="login_cellphone_email" placeholder="请输入手机/邮箱" type="text"/>
+                </div>
+                <div class="input-block" id="user_company_id">
+                    <i class="login-company">
+                    </i>
+                    <input name="login_company_id" id="login_company_id" placeholder="请输入商户ID" type="text"/>
+                </div>
+                <div class="input-block" id="user_company_userid">
+                    <i class="login-acount">
+                    </i>
+                    <input name="login_user_name" id="login_user_name" placeholder="请输入用户名" type="text"/>
+                </div>
+                <div class="input-block" id="user_password">
+                    <i class="login-lock">
+                    </i>
+                    <input name="login_user_pwd" id="login_user_pwd" placeholder="请输入密码" type="password"/>
+                </div>
+            </div>
+            <div class="login-block-buttons">
+                <div class="login-btn">
+                    登陆
+                </div>
+                <div class="login-err-message"></div>
+            </div>
+            <div class="login-block-links">
+                <div class="login-block-links-regedist">
+                    注册
+                </div>
+                <div class="login-block-links-forgot">
+                    忘记密码
+                </div>
+            </div>
+        </div>
+        <script src="./js/jquery-3.1.1.min.js">
+        </script>
+        <script src="./js/app.min.js">
+        </script>
+        <script src="./js/iscroll.js">
+        </script>
+        <script src="./js/amazeui.datetimepicker.min.js">
+        </script>
+        <script src="./js/tools.js">
+        </script>
+        <script src="./js/temp_api_server.js">
+        </script>
+        <script src="./js/main.js">
+        </script>
+        <script src="./js/page-home.js">
+        </script>
+        <script src="./js/page-shouyin.js">
+        </script>
+        <script src="./js/page-duizhang.js">
+        </script>
+          <script src="./js/tool/vue/vue.min.js">
+        </script>
+        <script>
+            try {
+                App.restore();
+              } catch (err) {
+                App.load('home');
+              }
+        </script>
+    </body>
+</html>
